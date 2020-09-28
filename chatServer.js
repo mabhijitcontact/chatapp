@@ -6,6 +6,7 @@ const port = process.env.PORT || 3665
 app.use(express.static(__dirname + '/public'));
 
 const expressServer = app.listen(port);
+console.log('server running on port ' + port);
 const io = socketio(expressServer);
 
 let usersJoined = [];
