@@ -1,61 +1,68 @@
-<link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-  crossorigin="anonymous"
-/>
-<link rel="stylesheet" href="./styles.css" />
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="./imgs/favicon.ico" sizes="16x16" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Simple Chat App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row showBlock justify-content-center" id="loginWindow">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+          <h2>Login Form</h2>
+          <form id="user-loginForm">
+            <div class="imgcontainer">
+              <img
+                src="./imgs/social-media-3846597_640.png"
+                alt="Avatar"
+                class="avatar"
+              />
+            </div>
+            <div
+              class="alert alert-danger hideBlock"
+              id="loginAlert"
+              role="alert"
+            ></div>
+            <div class="container-fluid">
+              <label for="uname"><b>Username</b></label>
+              <input
+                type="text"
+                id="username"
+                type="text"
+                placeholder="Enter username"
+                required
+              />
 
-<div class="container">
-  <div class="row showBlock justify-content-center" id="loginWindow">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
-      <h2>Login Form</h2>
-      <form id="user-loginForm">
-        <div class="imgcontainer">
-          <img
-            src="./imgs/social-media-3846597_640.png"
-            alt="Avatar"
-            class="avatar"
-          />
+              <button type="submit">Take me Chat</button>
+            </div>
+          </form>
         </div>
-        <div
-          class="alert alert-danger hideBlock"
-          id="loginAlert"
-          role="alert"
-        ></div>
-        <div class="container-fluid">
-          <label for="uname"><b>Username</b></label>
-          <input
-            type="text"
-            id="username"
-            type="text"
-            placeholder="Enter username"
-            required
-          />
-
-          <button type="submit">Take me Chat</button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="row hideBlock" id="chatWindow">
-    <div class="chat-panel col-sm-12">
-      <div class="message-form">
-        <form id="user-inputForm">
-          <div class="col-sm-12">
-            <input
-              id="user-message"
-              type="text"
-              placeholder="Enter your message"
-            />
-          </div>
-        </form>
       </div>
-      <ul id="messages" class="col-sm-12"></ul>
+      <div class="row hideBlock" id="chatWindow">
+        <div class="chat-panel col-sm-12">
+          <div class="message-form">
+            <form id="user-inputForm">
+              <div class="col-sm-12">
+                <input
+                  id="user-message"
+                  type="text"
+                  placeholder="Enter your message"
+                />
+              </div>
+            </form>
+          </div>
+          <ul id="messages" class="col-sm-12"></ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </body>
+</html>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="./scripts.js"></script>
