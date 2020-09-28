@@ -34,7 +34,7 @@ function toggleBlock(isTrue) {
 
 function connectToServer(usr) {
     let mySocketID;
-    const socket = io('http://localhost:9000', {
+    const socket = io('https://simplechatappinterview.herokuapp.com', {
         query: {
             username: usr
         }

@@ -12,6 +12,9 @@ const io = socketio(expressServer);
 let usersJoined = [];
 let userInfo = {};
 // io.on = io.of('/').on I have made entire things on root namespace
+// app.get("/runningport", (req, res)=>{
+//     res.json("")
+// });
 
 io.on('connection', (socket) => {
     let userName = socket.handshake.query.username;
