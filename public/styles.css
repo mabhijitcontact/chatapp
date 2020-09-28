@@ -3,10 +3,10 @@ body {
   color: #000;
 }
 .showBlock {
-  display: block;
+  display: block !important;
 }
 .hideBlock {
-  display: none;
+  display: none !important;
 }
 
 .chat-panel {
@@ -97,4 +97,48 @@ img.avatar {
 span.psw {
   float: right;
   padding-top: 16px;
+}
+
+#faqWindow {
+  display: block;
+  position: absolute;
+  top: 25%;
+  right: 30px;
+  width: 350px;
+  z-index: 9999;
+  background: #ccc;
+  box-shadow: 2px 2px 7px #000;
+}
+
+#faqWindow > .faqTitle {
+  position: relative;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom: 1px solid #b7b2b2;
+}
+
+#faqWindow > .faqBody {
+  position: relative;
+  float: left;
+  overflow-y: auto;
+  max-height: 300px;
+}
+#faqWindow > .faqBody ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #3b4048;
+}
+
+#faqWindow > .faqBody ul li {
+  padding: 10px 25px;
+}
+#faqWindow > .faqBody ul li p:nth-child(odd) {
+  font-weight: bold;
+}
+#closeFaq {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
 }

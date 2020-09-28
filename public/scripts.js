@@ -34,11 +34,15 @@ function toggleBlock(isTrue) {
 
 function connectToServer(usr) {
     let mySocketID;
-    const socket = io('https://simplechatappinterview.herokuapp.com', {
+    //let chatserverURL = "http://localhost:3665";
+    let chatserverURL = "https://simplechatappinterview.herokuapp.com";
+    //host:port
+    //please change the server url based on host and port;
+    const socket = io(chatserverURL, {
         query: {
             username: usr
         }
-    }); // the / namespace/endpoint
+    });
 
     socket.on('connect', () => {
         mySocketID = socket.id;
@@ -81,6 +85,7 @@ function connectToServer(usr) {
                     socket.emit('leaveChatRequestFromClient', { mySocketID });
                     break;
                 case 'FAQ':
+                    openFaq();
                     break;
                 case 'default':
                     socket.emit('newMessageToServer', { text: newMessage });
@@ -108,6 +113,14 @@ function buildHTML(msg) {
     </li>    
     `
     return newHTML;
+}
+
+function openFaq() {
+    document.getElementById("faqWindow").classList.remove("hideBlock");
+    document.getElementById("closeFaq").addEventListener("click", (e) => {
+        e.preventDefault();
+        document.getElementById("faqWindow").classList.add("hideBlock");
+    });
 }
 // socket.on('ping',()=>{
 //     console.log('Ping was recieved from the server.');
