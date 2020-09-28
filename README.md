@@ -5,3 +5,6 @@ type /end
 
 To See FAQ
 type /faq
+
+TO Run
+node chatServer.js
