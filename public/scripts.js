@@ -76,6 +76,7 @@ function connectToServer(usr) {
     document.querySelector('#user-inputForm').addEventListener('submit', (event) => {
         event.preventDefault();
         const newMessage = document.querySelector('#user-message').value;
+        document.querySelector('#user-message').value = "";
         if (newMessage.charAt(0) == "/") {
             cmdStr = newMessage.substring(1, newMessage.length).toUpperCase();
             switch (cmdStr) {
