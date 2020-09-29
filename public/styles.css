@@ -11,7 +11,7 @@ body {
 
 .chat-panel {
   background-color: #fff;
-  min-height: 100vh;
+  min-height: 95vh;
   position: relative;
   padding-top: 10px;
   border: 1px solid #ccc;
