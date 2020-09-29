@@ -144,6 +144,7 @@ span.psw {
 #faqWindow > .faqBody ul li p:nth-child(odd) {
   font-weight: bold;
   background: #ccc;
+  padding: 10px;
 }
 #closeFaq {
   position: absolute;
