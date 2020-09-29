@@ -56,7 +56,7 @@ input {
   align-items: stretch;
 }
 #messages li:nth-child(odd) {
-  background: #909397;
+  background: #dcdee0;
   color: #000;
 }
 
