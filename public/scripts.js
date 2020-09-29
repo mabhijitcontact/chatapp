@@ -88,6 +88,9 @@ function connectToServer(usr) {
                 case 'FAQ':
                     openFaq();
                     break;
+                case 'HELP':
+                    openFaq();
+                    break;
                 case 'default':
                     socket.emit('newMessageToServer', { text: newMessage });
                     break;
