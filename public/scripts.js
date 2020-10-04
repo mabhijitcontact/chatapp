@@ -34,6 +34,7 @@ function toggleBlock(isTrue) {
 
 function connectToServer(usr) {
     let mySocketID;
+    let myId = usr;
     //let chatserverURL = "http://localhost:3665";
     let chatserverURL = "https://simplechatappinterview.herokuapp.com";
     //host:port
@@ -63,7 +64,7 @@ function connectToServer(usr) {
     })
 
     socket.on('newMessageToClients', (msg) => {
-        const newMsg = buildHTML(msg);
+        const newMsg = buildHTML(msg, myId);
         document.querySelector('#messages').innerHTML += newMsg
     });
 
@@ -103,18 +104,18 @@ function connectToServer(usr) {
 
 
 
-function buildHTML(msg) {
+function buildHTML(msg, usr) {
     const convertedDate = new Date(msg.time).toLocaleString();
     const newHTML = `
-    <li>
-        <div class="user-image">
-            <img src="${msg.avatar}" />
-        </div>
-        <div class="user-message">
-            <div class="user-name-time">${msg.username} <span>${convertedDate}</span></div>
-            <div class="message-text">${msg.text}</div>
-        </div>
-    </li>    
+    <li ${usr != msg.username ? 'style = "padding-left: 30px"' : "null"}>
+    <div class="user-image">
+        <img src="${msg.avatar}" />
+    </div>
+    <div class="user-message">
+        <div class="user-name-time">${msg.username} <span>${convertedDate}</span></div>
+        <div class="message-text">${msg.text}</div>
+    </div>
+    </li >
     `
     return newHTML;
 }
