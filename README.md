@@ -8,3 +8,5 @@ type /faq
 
 TO Run
 node chatServer.js
+
+test it on :- https://simplechatappinterview.herokuapp.com/
